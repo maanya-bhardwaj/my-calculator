@@ -42,3 +42,20 @@ class TestMultiplyDivideWithValidation:
             divide("10", 2)
 
 # TODO: Students will add TestMultiplyDivide class
+
+class TestMultiplyDivide:
+    """Test valid multiply and divide operations."""
+    
+    def test_multiply_numbers(self):
+        assert multiply(4, 5) == 20
+        assert multiply(-2, 3) == -6
+        assert multiply(0, 100) == 0
+
+    def test_divide_numbers(self):
+        assert divide(10, 2) == 5
+        assert divide(-9, 3) == -3
+        assert divide(5, 2) == 2.5
+
+    def test_divide_by_zero(self):
+        with pytest.raises(ValueError, match="division by zero is undefined"):
+            divide(10, 0)
